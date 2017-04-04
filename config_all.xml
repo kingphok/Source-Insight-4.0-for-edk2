@@ -423,6 +423,7 @@
 	</Menus>
 	<Keymaps>
 		<Main>
+			<item Command="Show File in Explorer..." Keycode="(C)D" />
 			<item Command="Simple Tab" Keycode="(CA)Tab" />
 			<item Command="Back Tab" Keycode="(S)Tab" />
 			<item Command="Tab" Keycode="Tab" />
