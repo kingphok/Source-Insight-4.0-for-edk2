@@ -423,6 +423,7 @@
 	</Menus>
 	<Keymaps>
 		<Main>
+			<item Command="Window List" Keycode="(C)B" />
 			<item Command="Symbol Info..." Keycode="(C)mouse(R+SEL)" />
 			<item Command="Load Layout A" Keycode="(CS)F1" />
 			<item Command="Load Layout B" Keycode="(CS)F2" />
@@ -8192,7 +8193,7 @@
 			TextColor="#aaaaaa"
 			BackColor="#000000"
 			>
-			<Font name="Segoe UI" psize="8" fpfamily="34" charset="0" />
+			<Font name="Segoe UI" psize="10" fpfamily="34" charset="0" />
 		</ListDisplay>
 	</WindowListWindow>
 	<RelationWindow>
