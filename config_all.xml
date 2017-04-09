@@ -423,8 +423,8 @@
 	</Menus>
 	<Keymaps>
 		<Main>
-			<item Command="Window List" Keycode="(C)B" />
 			<item Command="Symbol Info..." Keycode="(C)mouse(R+SEL)" />
+			<item Command="Pick Window..." Keycode="(C)B" />
 			<item Command="Load Layout A" Keycode="(CS)F1" />
 			<item Command="Load Layout B" Keycode="(CS)F2" />
 			<item Command="Load Layout C" Keycode="(CS)F3" />
