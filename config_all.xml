@@ -2163,6 +2163,41 @@
 			<ScreenFont name="Consolas" psize="10" fpfamily="49" charset="0" />
 			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
+		<Type
+			Name="EDK II INF File"
+			FileFilter="*.inf"
+			Language="EDK II Module Information (INF) Language"
+			ParsePattern=""
+			WordWrap="0"
+			ExpandTabs="1"
+			EnterKeyIsEOL="1"
+			StatusbarMode="0"
+			AddToProject="1"
+			EmulateScreenFontsForPrinting="1"
+			LineUpWhiteSpace="1"
+			VisibleTabs="0"
+			VisibleSpaces="0"
+			ShowLineNumbers="1"
+			ShowRightMargin="0"
+			ShowPageBreaks="0"
+			UseSymbolPane="1"
+			UseOverview="1"
+			AllowAutocomplete="1"
+			AllowSmartPaste="1"
+			AllowSnippets="1"
+			ShowRefHighlights="1"
+			TabWidth="2"
+			MarginWidth="120"
+			IndentWidth="0"
+			AutoInsertPairs="0"
+			ParsePatternSymbolType=""
+			AutoIndentMode="1"
+			IndentOpenBrace="1"
+			IndentCloseBrace="1"
+			>
+			<ScreenFont name="Consolas" psize="10" fpfamily="49" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+		</Type>
 	</FileTypes>
 	<Styles
 		StyleAppVer="4.00.0085"
@@ -8666,6 +8701,122 @@
 				<Item Keyword="WRITE_LOCK_STATUS" Style="EDK II Language" />
 				<Item Keyword="WRITE_POLICY_RELIABLE" Style="EDK II Language" />
 				<Item Keyword="WRITE_STATUS" Style="EDK II Language" />
+			</Keywords>
+		</Language>
+		<Language
+			Name="EDK II Module Information (INF) Language"
+			Comment="Published from https://github.com/wujingbo/Source-Insight-4.0-for-edk2"
+			CaseSensitive="1"
+			CPreprocessor="1"
+			SmartIndent="0"
+			ContainsSourceCode="1"
+			SyntaxFormatting="1"
+			UseRegexParsing="1"
+			SyntaxDecorations="0"
+			CommentStyles="0"
+			AllowSmartTab="0"
+			DetectNumbers="1"
+			CHexNum="1"
+			IntelHexNum="0"
+			MotorolaHexNum="0"
+			BasicHexNum="0"
+			IntelOctalNum="0"
+			QOctalNum="0"
+			NonAlphaNumIdentChars="_"
+			>
+			<CustomParsing>
+				<Expression
+					SymbolType="Class"
+					Pattern="\([\[]+[A-Za-z0-9._, ]+[\]]\)"
+					RegexType="Source Insight"
+					/>
+				<Expression
+					SymbolType="Variable"
+					Pattern="^\w*LIBRARY_CLASS+\w*=+\w*\([A-Za-z0-9_]+\)"
+					RegexType="Source Insight"
+					/>
+				<Expression
+					SymbolType="Macro"
+					Pattern="^\w*DEFINE+\w+\([A-Za-z0-9_]+\)\w*="
+					RegexType="Source Insight"
+					/>
+			</CustomParsing>
+			<Ranges>
+				<Range
+					Type="Line"
+					AllowNesting="0"
+					ParseInside="0"
+					ReadOnly="0"
+					StyleName="Comment Single Line"
+					StyleDelimiter="1"
+					StartString="#"
+					EscapeString=""
+					ValidateColumns="0"
+					FirstColumn="0"
+					LastColumn="0"
+					/>
+				<Range
+					Type="Multiline"
+					AllowNesting="0"
+					ParseInside="0"
+					ReadOnly="0"
+					StyleName="String"
+					StyleDelimiter="1"
+					StartString="L&quot;"
+					EndString="&quot;"
+					EscapeString="\"
+					ValidateColumns="0"
+					FirstColumn="0"
+					LastColumn="0"
+					/>
+			</Ranges>
+			<Keywords>
+				<Item Keyword="ACPI" Style="EDK II Language" />
+				<Item Keyword="ASL" Style="EDK II Language" />
+				<Item Keyword="BASE_NAME" Style="EDK II Language" />
+				<Item Keyword="BIN" Style="EDK II Language" />
+				<Item Keyword="BUILD_NUMBER" Style="EDK II Language" />
+				<Item Keyword="COMPAT16" Style="EDK II Language" />
+				<Item Keyword="CONSTRUCTOR" Style="EDK II Language" />
+				<Item Keyword="CUSTOM_MAKEFILE" Style="EDK II Language" />
+				<Item Keyword="DEFINE" Style="EDK II Language" />
+				<Item Keyword="DESTRUCTOR" Style="EDK II Language" />
+				<Item Keyword="DISPOSABLE" Style="EDK II Language" />
+				<Item Keyword="DPX_SOURCE" Style="EDK II Language" />
+				<Item Keyword="DXE_DEPEX" Style="EDK II Language" />
+				<Item Keyword="EDK_RELEASE_VERSION" Style="EDK II Language" />
+				<Item Keyword="ENTRY_POINT" Style="EDK II Language" />
+				<Item Keyword="FILE_GUID" Style="EDK II Language" />
+				<Item Keyword="FV" Style="EDK II Language" />
+				<Item Keyword="GUID" Style="EDK II Language" />
+				<Item Keyword="INF_VERSION" Style="EDK II Language" />
+				<Item Keyword="LIBRARY_CLASS" Style="EDK II Language" />
+				<Item Keyword="MODULE_TYPE" Style="EDK II Language" />
+				<Item Keyword="MODULE_UNI_FILE" Style="EDK II Language" />
+				<Item Keyword="PCD_IS_DRIVER" Style="EDK II Language" />
+				<Item Keyword="PCI_CLASS_CODE" Style="EDK II Language" />
+				<Item Keyword="PCI_COMPRESS" Style="EDK II Language" />
+				<Item Keyword="PCI_DEVICE_ID" Style="EDK II Language" />
+				<Item Keyword="PCI_VENDOR_ID" Style="EDK II Language" />
+				<Item Keyword="PE32" Style="EDK II Language" />
+				<Item Keyword="PEI_DEPEX" Style="EDK II Language" />
+				<Item Keyword="PIC" Style="EDK II Language" />
+				<Item Keyword="PI_SPECIFICATION_VERSION" Style="EDK II Language" />
+				<Item Keyword="RAW" Style="EDK II Language" />
+				<Item Keyword="SHADOW" Style="EDK II Language" />
+				<Item Keyword="SMM_DEPEX" Style="EDK II Language" />
+				<Item Keyword="SPEC" Style="EDK II Language" />
+				<Item Keyword="SUBTYPE_GUID" Style="EDK II Language" />
+				<Item Keyword="TE" Style="EDK II Language" />
+				<Item Keyword="UEFI_APP" Style="EDK II Language" />
+				<Item Keyword="UEFI_HII_RESOURCE_SECTION" Style="EDK II Language" />
+				<Item Keyword="UEFI_SPECIFICATION_VERSION" Style="EDK II Language" />
+				<Item Keyword="UI" Style="EDK II Language" />
+				<Item Keyword="UNI_UI" Style="EDK II Language" />
+				<Item Keyword="UNI_VER" Style="EDK II Language" />
+				<Item Keyword="UNLOAD_IMAGE" Style="EDK II Language" />
+				<Item Keyword="VER" Style="EDK II Language" />
+				<Item Keyword="VERSION_STRING" Style="EDK II Language" />
 			</Keywords>
 		</Language>
 	</Languages>
