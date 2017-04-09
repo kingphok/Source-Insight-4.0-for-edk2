@@ -25,8 +25,8 @@
 			StatusBar="1"
 			PageNumInStatusbar="0"
 			MainToolBar="1"
-			HorizScrollBar="1"
-			VertScrollBar="1"
+			HorizScrollBar="0"
+			VertScrollBar="0"
 			EnhancedVertScrollBar="1"
 			ScalePercent="100"
 			PopupToolbar="1"
@@ -55,7 +55,7 @@
 			OutlineIndent="0"
 			OutlineAllBlocks="1"
 			ShowNestingLines="1"
-			ShowCurLineMarker="0"
+			ShowCurLineMarker="1"
 			PanelToolbarBottom="1"
 			ShowSearchBar="0"
 			ShowSearchProjBar="0"
@@ -209,7 +209,7 @@
 		AlwaysSearchProjectPath="0"
 		ParseBeforeLookup="0"
 		SearchOnlyProjectFiles="0"
-		MatchAllLanguages="0"
+		MatchAllLanguages="1"
 		>
 		<ProjectSymbolPathPath />
 	</LookupPreferences>
@@ -1033,7 +1033,7 @@
 			ShowRefHighlights="0"
 			TabWidth="4"
 			MarginWidth="120"
-			IndentWidth="4"
+			IndentWidth="0"
 			AutoInsertPairs="0"
 			ParsePatternSymbolType=""
 			AutoIndentMode="1"
@@ -1049,7 +1049,7 @@
 			Language="ANSI C Language"
 			ParsePattern=""
 			WordWrap="0"
-			ExpandTabs="0"
+			ExpandTabs="1"
 			EnterKeyIsEOL="1"
 			StatusbarMode="0"
 			AddToProject="1"
@@ -1084,7 +1084,7 @@
 			Language="C/C++ Language"
 			ParsePattern=""
 			WordWrap="0"
-			ExpandTabs="0"
+			ExpandTabs="1"
 			EnterKeyIsEOL="1"
 			StatusbarMode="0"
 			AddToProject="1"
@@ -1101,9 +1101,9 @@
 			AllowSmartPaste="1"
 			AllowSnippets="1"
 			ShowRefHighlights="0"
-			TabWidth="4"
+			TabWidth="2"
 			MarginWidth="120"
-			IndentWidth="4"
+			IndentWidth="1"
 			AutoInsertPairs="1"
 			ParsePatternSymbolType=""
 			AutoIndentMode="2"
@@ -2265,7 +2265,7 @@
 		RunInBackground="1"
 		RunEveryMinutes="60"
 		AddNewFiles="0"
-		RemoveOldFiles="0"
+		RemoveOldFiles="1"
 		SyncOnStartup="1"
 		/>
 	<ProjectDefaults
@@ -7635,7 +7635,7 @@
 		ShowChanges="1"
 		ShowLongFunctions="1"
 		>
-		<Font name="Segoe UI" psize="8" fpfamily="34" charset="0" />
+		<Font name="Segoe UI" psize="10" fpfamily="34" charset="0" />
 		<SymbolTypes All="1" />
 		<SymbolSorting
 			SortMode="1"
