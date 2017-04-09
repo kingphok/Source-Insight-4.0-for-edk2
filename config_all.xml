@@ -2198,6 +2198,41 @@
 			<ScreenFont name="Consolas" psize="10" fpfamily="49" charset="0" />
 			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
+		<Type
+			Name="EDK II VFR File"
+			FileFilter="*.vfr;*.vfi"
+			Language="EDK II Visual Forms Representation (VFR) Language"
+			ParsePattern=""
+			WordWrap="0"
+			ExpandTabs="1"
+			EnterKeyIsEOL="1"
+			StatusbarMode="0"
+			AddToProject="1"
+			EmulateScreenFontsForPrinting="1"
+			LineUpWhiteSpace="1"
+			VisibleTabs="0"
+			VisibleSpaces="0"
+			ShowLineNumbers="1"
+			ShowRightMargin="0"
+			ShowPageBreaks="0"
+			UseSymbolPane="1"
+			UseOverview="1"
+			AllowAutocomplete="1"
+			AllowSmartPaste="1"
+			AllowSnippets="1"
+			ShowRefHighlights="1"
+			TabWidth="2"
+			MarginWidth="120"
+			IndentWidth="0"
+			AutoInsertPairs="0"
+			ParsePatternSymbolType=""
+			AutoIndentMode="1"
+			IndentOpenBrace="1"
+			IndentCloseBrace="1"
+			>
+			<ScreenFont name="Consolas" psize="10" fpfamily="49" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+		</Type>
 	</FileTypes>
 	<Styles
 		StyleAppVer="4.00.0085"
@@ -8818,6 +8853,56 @@
 				<Item Keyword="VER" Style="EDK II Language" />
 				<Item Keyword="VERSION_STRING" Style="EDK II Language" />
 			</Keywords>
+		</Language>
+		<Language
+			Name="EDK II Visual Forms Representation (VFR) Language"
+			Comment="Published from https://github.com/wujingbo/Source-Insight-4.0-for-edk2"
+			CaseSensitive="1"
+			CPreprocessor="1"
+			SmartIndent="0"
+			ContainsSourceCode="1"
+			SyntaxFormatting="1"
+			UseRegexParsing="1"
+			SyntaxDecorations="0"
+			CommentStyles="0"
+			AllowSmartTab="0"
+			DetectNumbers="1"
+			CHexNum="1"
+			IntelHexNum="0"
+			MotorolaHexNum="0"
+			BasicHexNum="0"
+			IntelOctalNum="0"
+			QOctalNum="0"
+			NonAlphaNumIdentChars="_#"
+			>
+			<CustomParsing>
+				<Expression
+					SymbolType="Macro"
+					Pattern="^\w*#define+\w+\([A-Za-z0-9_]+\)"
+					RegexType="Source Insight"
+					/>
+				<Expression
+					SymbolType="#-Directive"
+					Pattern="^\w*#include+\w*[&lt;&quot;]+\([A-Za-z0-9_.\\]+\)[&quot;&gt;]"
+					RegexType="Source Insight"
+					/>
+			</CustomParsing>
+			<Ranges>
+				<Range
+					Type="Line"
+					AllowNesting="0"
+					ParseInside="0"
+					ReadOnly="0"
+					StyleName="Comment Single Line"
+					StyleDelimiter="1"
+					StartString="//"
+					EscapeString=""
+					ValidateColumns="0"
+					FirstColumn="0"
+					LastColumn="0"
+					/>
+			</Ranges>
+			<Keywords/>
 		</Language>
 	</Languages>
 	<ParsingOptions>
