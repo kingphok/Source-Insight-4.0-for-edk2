@@ -8137,7 +8137,7 @@
 		<Language
 			Name="EDK II Package Declaration (DEC) Language"
 			Comment="Published from https://github.com/wujingbo/Source-Insight-4.0-for-edk2"
-			CaseSensitive="0"
+			CaseSensitive="1"
 			CPreprocessor="1"
 			SmartIndent="0"
 			ContainsSourceCode="1"
