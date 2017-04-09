@@ -2023,6 +2023,41 @@
 			<ScreenFont name="Consolas" psize="10" fpfamily="49" charset="0" />
 			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
+		<Type
+			Name="ASL File"
+			FileFilter="*.asl;*.asi"
+			Language="ACPI Source Language (ASL)"
+			ParsePattern=""
+			WordWrap="0"
+			ExpandTabs="1"
+			EnterKeyIsEOL="1"
+			StatusbarMode="0"
+			AddToProject="1"
+			EmulateScreenFontsForPrinting="1"
+			LineUpWhiteSpace="1"
+			VisibleTabs="0"
+			VisibleSpaces="0"
+			ShowLineNumbers="1"
+			ShowRightMargin="0"
+			ShowPageBreaks="0"
+			UseSymbolPane="1"
+			UseOverview="1"
+			AllowAutocomplete="1"
+			AllowSmartPaste="0"
+			AllowSnippets="1"
+			ShowRefHighlights="1"
+			TabWidth="2"
+			MarginWidth="120"
+			IndentWidth="1"
+			AutoInsertPairs="0"
+			ParsePatternSymbolType=""
+			AutoIndentMode="0"
+			IndentOpenBrace="1"
+			IndentCloseBrace="1"
+			>
+			<ScreenFont name="Consolas" psize="10" fpfamily="49" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+		</Type>
 	</FileTypes>
 	<Styles
 		StyleAppVer="4.00.0085"
@@ -2243,6 +2278,22 @@
 		<Style Name="Ref to VHDL Config" ParentStyle="Reference" />
 		<Style Name="HTML Tag Excerpt" />
 		<Style Name="new comment" />
+		<Style Name="ASL Language" TextColor="#ff8000" />
+		<Style
+			Name="ASL Primary (Terminal) Terms"
+			TextColor="#ff8000"
+			ParentStyle="ASL Language"
+			/>
+		<Style
+			Name="ASL Parameter Keyword Terms"
+			TextColor="#ff8080"
+			ParentStyle="ASL Language"
+			/>
+		<Style
+			Name="ASL Resource Template Terms"
+			TextColor="#00ffff"
+			ParentStyle="ASL Language"
+			/>
 	</Styles>
 	<FTPSites>
 		<SiteList/>
@@ -7386,6 +7437,658 @@
 				<Item Keyword="true" Style="Keyword" />
 				<Item Keyword="false" Style="Keyword" />
 				<Item Keyword="null" Style="Keyword" />
+			</Keywords>
+		</Language>
+		<Language
+			Name="ACPI Source Language (ASL)"
+			Comment="Published from https://github.com/wujingbo/Source-Insight-4.0-for-edk2"
+			CaseSensitive="0"
+			CPreprocessor="1"
+			SmartIndent="0"
+			ContainsSourceCode="1"
+			SyntaxFormatting="1"
+			UseRegexParsing="1"
+			SyntaxDecorations="0"
+			CommentStyles="0"
+			AllowSmartTab="0"
+			DetectNumbers="1"
+			CHexNum="1"
+			IntelHexNum="0"
+			MotorolaHexNum="0"
+			BasicHexNum="0"
+			IntelOctalNum="0"
+			QOctalNum="0"
+			NonAlphaNumIdentChars="_#"
+			>
+			<CustomParsing>
+				<Expression
+					SymbolType="Function"
+					Pattern="Method+\w*[(]+\w*\([A-Za-z0-9_]+\)[A-Za-z0-9_,)&quot; ]"
+					RegexType="Source Insight multi-line"
+					/>
+				<Expression
+					SymbolType="Function"
+					Pattern="Scope+\w*[(]+\w*\([A-Za-z0-9_]+\)[) ]"
+					RegexType="Source Insight"
+					/>
+				<Expression
+					SymbolType="Function"
+					Pattern="Scope+\w*[(]+\w*[A-Za-z0-9_\\ ].*\([A-Za-z0-9_\\]+\)[) ]"
+					RegexType="Source Insight"
+					/>
+				<Expression
+					SymbolType="Function"
+					Pattern="Device+\w*[(]+\w*\([A-Za-z0-9_]+\)[) ]"
+					RegexType="Source Insight"
+					/>
+				<Expression
+					SymbolType="Function"
+					Pattern="Device+\w*[(]+\w*[A-Za-z0-9_\\ ].*\([A-Za-z0-9_\\]+\)[) ]"
+					RegexType="Source Insight"
+					/>
+				<Expression
+					SymbolType="Variable"
+					Pattern="Name+\w*[(]+\w*\([A-Za-z0-9_\\]*\)[A-Za-z0-9_,) ]"
+					RegexType="Source Insight"
+					/>
+				<Expression
+					SymbolType="Data Member"
+					Pattern="^\w*[{]*\w*\([A-Za-z_][A-Za-z0-9_]+\)[^()][, 0-9]"
+					RegexType="Source Insight"
+					/>
+				<Expression
+					SymbolType="Data Member"
+					Pattern="^\w*[{]*\w*Offset+\w*(+[xX0-9]+)+[, ]*\([A-Za-z_][A-Za-z0-9_]+\)[, 0-9]"
+					RegexType="Source Insight"
+					/>
+				<Expression
+					SymbolType="Macro"
+					Pattern="^\w*#define+\w+\([A-Za-z0-9_]+\)\w+*"
+					RegexType="Source Insight"
+					/>
+				<Expression
+					SymbolType="Constant"
+					Pattern="^\w*#define+\w+\([A-Za-z0-9_]+\)"
+					RegexType="Source Insight"
+					/>
+			</CustomParsing>
+			<Ranges>
+				<Range
+					Type="Line"
+					AllowNesting="0"
+					ParseInside="0"
+					ReadOnly="0"
+					StyleName="Comment Single Line"
+					StyleDelimiter="1"
+					StartString="//"
+					EscapeString=""
+					ValidateColumns="0"
+					FirstColumn="0"
+					LastColumn="0"
+					/>
+				<Range
+					Type="Multiline"
+					AllowNesting="0"
+					ParseInside="0"
+					ReadOnly="0"
+					StyleName="Comment Multi Line"
+					StyleDelimiter="1"
+					StartString="/*"
+					EndString="*/"
+					EscapeString=""
+					ValidateColumns="0"
+					FirstColumn="0"
+					LastColumn="0"
+					/>
+				<Range
+					Type="Multiline"
+					AllowNesting="0"
+					ParseInside="0"
+					ReadOnly="0"
+					StyleName="String"
+					StyleDelimiter="1"
+					StartString="&quot;"
+					EndString="&quot;"
+					EscapeString="\"
+					ValidateColumns="0"
+					FirstColumn="0"
+					LastColumn="0"
+					/>
+				<Range
+					Type="Multiline"
+					AllowNesting="0"
+					ParseInside="0"
+					ReadOnly="0"
+					StyleName="String"
+					StyleDelimiter="1"
+					StartString="&apos;"
+					EndString="&apos;"
+					EscapeString="\"
+					ValidateColumns="0"
+					FirstColumn="0"
+					LastColumn="0"
+					/>
+			</Ranges>
+			<Keywords>
+				<Item Keyword="#define" Style="Keyword" />
+				<Item Keyword="#else" Style="Directive" />
+				<Item Keyword="#elseif" Style="Directive" />
+				<Item Keyword="#endif" Style="Directive" />
+				<Item Keyword="#if" Style="Directive" />
+				<Item Keyword="#ifdef" Style="Directive" />
+				<Item Keyword="#ifndef" Style="Directive" />
+				<Item Keyword="#include" Style="Keyword" />
+				<Item Keyword="AccessAs" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Acquire" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="ActiveBoth" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="ActiveHigh" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="ActiveLow" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Add" Style="ASL Primary (Terminal) Terms" />
+				<Item
+					Keyword="AddressingMode10Bit"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item
+					Keyword="AddressingMode7Bit"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item
+					Keyword="AddressRangeACPI"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item
+					Keyword="AddressRangeMemory"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item
+					Keyword="AddressRangeNVS"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item
+					Keyword="AddressRangeReserved"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item Keyword="_ADR" Style="ASL Resource Template Terms" />
+				<Item Keyword="Alias" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="And" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="AnyAcc" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Arg0" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Arg1" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Arg2" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Arg3" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Arg4" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Arg5" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Arg6" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="_ASI" Style="ASL Resource Template Terms" />
+				<Item Keyword="_ASZ" Style="ASL Resource Template Terms" />
+				<Item Keyword="_ATT" Style="ASL Resource Template Terms" />
+				<Item Keyword="AttribBlock" Style="ASL Parameter Keyword Terms" />
+				<Item
+					Keyword="AttribBlockProcessCall"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item Keyword="AttribByte" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="AttribBytes" Style="ASL Parameter Keyword Terms" />
+				<Item
+					Keyword="AttribProcessCall"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item Keyword="AttribQuick" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="AttribRawBytes" Style="ASL Parameter Keyword Terms" />
+				<Item
+					Keyword="AttribRawProcessBytes"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item
+					Keyword="AttribSendReceive"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item Keyword="AttribWord" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="BankField" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="_BAS" Style="ASL Resource Template Terms" />
+				<Item Keyword="BigEndianing" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="_BM" Style="ASL Resource Template Terms" />
+				<Item Keyword="Break" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="BreakPoint" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Buffer" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="BufferAcc" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="BuffFieldObj" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="BuffObj" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="BusMaster" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="ByteAcc" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Cacheable" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Case" Style="ASL Primary (Terminal) Terms" />
+				<Item
+					Keyword="ClockPhaseFirst"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item
+					Keyword="ClockPhaseSecond"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item
+					Keyword="ClockPolarityHigh"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item
+					Keyword="ClockPolarityLow"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item Keyword="Concatenate" Style="ASL Primary (Terminal) Terms" />
+				<Item
+					Keyword="ConcatenateResTemplate"
+					Style="ASL Primary (Terminal) Terms"
+					/>
+				<Item Keyword="CondRefOf" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Connection" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Continue" Style="ASL Primary (Terminal) Terms" />
+				<Item
+					Keyword="ControllerInitiated"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item Keyword="CopyObject" Style="ASL Primary (Terminal) Terms" />
+				<Item
+					Keyword="CreateBitField"
+					Style="ASL Primary (Terminal) Terms"
+					/>
+				<Item
+					Keyword="CreateByteField"
+					Style="ASL Primary (Terminal) Terms"
+					/>
+				<Item
+					Keyword="CreateDWordField"
+					Style="ASL Primary (Terminal) Terms"
+					/>
+				<Item Keyword="CreateField" Style="ASL Primary (Terminal) Terms" />
+				<Item
+					Keyword="CreateQWordField"
+					Style="ASL Primary (Terminal) Terms"
+					/>
+				<Item
+					Keyword="CreateWordField"
+					Style="ASL Primary (Terminal) Terms"
+					/>
+				<Item Keyword="DataBitsEight" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="DataBitsFive" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="DataBitsNine" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="DataBitsSeven" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="DataBitsSix" Style="ASL Parameter Keyword Terms" />
+				<Item
+					Keyword="DataTableRegion"
+					Style="ASL Primary (Terminal) Terms"
+					/>
+				<Item Keyword="_DBT" Style="ASL Resource Template Terms" />
+				<Item Keyword="DDBHandleObj" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Debug" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="_DEC" Style="ASL Resource Template Terms" />
+				<Item Keyword="Decode10" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Decode16" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Decrement" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Default" Style="ASL Primary (Terminal) Terms" />
+				<Item
+					Keyword="DefinitionBlock"
+					Style="ASL Primary (Terminal) Terms"
+					/>
+				<Item
+					Keyword="DenseTranslation"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item Keyword="DerefOf" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Device" Style="ASL Primary (Terminal) Terms" />
+				<Item
+					Keyword="DeviceInitiated"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item Keyword="DeviceObj" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Divide" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="DMA" Style="ASL Resource Template Terms" />
+				<Item Keyword="_DPL" Style="ASL Resource Template Terms" />
+				<Item Keyword="_DRS" Style="ASL Resource Template Terms" />
+				<Item Keyword="DWordAcc" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="DWordIO" Style="ASL Resource Template Terms" />
+				<Item Keyword="DWordMemory" Style="ASL Resource Template Terms" />
+				<Item Keyword="DWordSpace" Style="ASL Resource Template Terms" />
+				<Item Keyword="Edge" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="EISAID" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Else" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="ElseIf" Style="ASL Primary (Terminal) Terms" />
+				<Item
+					Keyword="EmbeddedControl"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item Keyword="_END" Style="ASL Resource Template Terms" />
+				<Item Keyword="EndDependentFn" Style="ASL Resource Template Terms" />
+				<Item Keyword="EntireRange" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Event" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="EventObj" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Exclusive" Style="ASL Parameter Keyword Terms" />
+				<Item
+					Keyword="ExclusiveAndWake"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item Keyword="ExtendedIO" Style="ASL Resource Template Terms" />
+				<Item Keyword="ExtendedMemory" Style="ASL Resource Template Terms" />
+				<Item Keyword="ExtendedSpace" Style="ASL Resource Template Terms" />
+				<Item Keyword="External" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Fatal" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="FFixedHW" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Field" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="FieldUnitObj" Style="ASL Parameter Keyword Terms" />
+				<Item
+					Keyword="FindSetLeftBit"
+					Style="ASL Primary (Terminal) Terms"
+					/>
+				<Item
+					Keyword="FindSetRightBit"
+					Style="ASL Primary (Terminal) Terms"
+					/>
+				<Item Keyword="FixedDMA" Style="ASL Resource Template Terms" />
+				<Item Keyword="FixedIO" Style="ASL Resource Template Terms" />
+				<Item Keyword="_FLC" Style="ASL Resource Template Terms" />
+				<Item
+					Keyword="FlowControlHardware"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item
+					Keyword="FlowControlNone"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item Keyword="FlowControlXon" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="FourWireMode" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Fprintf" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="FromBCD" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Function" Style="ASL Primary (Terminal) Terms" />
+				<Item
+					Keyword="GeneralPurposeIO"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item
+					Keyword="GenericSerialBus"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item Keyword="GpioInt" Style="ASL Resource Template Terms" />
+				<Item Keyword="GpioIo" Style="ASL Resource Template Terms" />
+				<Item Keyword="_GRA" Style="ASL Resource Template Terms" />
+				<Item Keyword="_HE" Style="ASL Resource Template Terms" />
+				<Item Keyword="I2CSerialBusV2" Style="ASL Resource Template Terms" />
+				<Item Keyword="If" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Include" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Increment" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Index" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="IndexField" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="_INT" Style="ASL Resource Template Terms" />
+				<Item Keyword="Interrupt" Style="ASL Resource Template Terms" />
+				<Item Keyword="IntObj" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="IO" Style="ASL Resource Template Terms" />
+				<Item Keyword="_IOR" Style="ASL Resource Template Terms" />
+				<Item
+					Keyword="IoRestrictionInputOnly"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item
+					Keyword="IoRestrictionNone"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item
+					Keyword="IoRestrictionNoneAndPreserve"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item
+					Keyword="IoRestrictionOutputOnly"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item Keyword="IPMI" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="IRQ" Style="ASL Resource Template Terms" />
+				<Item Keyword="IRQNoFlags" Style="ASL Resource Template Terms" />
+				<Item Keyword="ISAOnlyRanges" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="LAnd" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="_LEN" Style="ASL Resource Template Terms" />
+				<Item Keyword="LEqual" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Level" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="LGreater" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="LGreaterEqual" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="_LIN" Style="ASL Resource Template Terms" />
+				<Item Keyword="LittleEndian" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="_LL" Style="ASL Resource Template Terms" />
+				<Item Keyword="LLess" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="LLessEqual" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="LNot" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="LNotEqual" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Load" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="LoadTable" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Local0" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Local1" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Local2" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Local3" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Local4" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Local5" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Local6" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Local7" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Lock" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="LOr" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="macro" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="_MAF" Style="ASL Resource Template Terms" />
+				<Item Keyword="Match" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="_MAX" Style="ASL Resource Template Terms" />
+				<Item Keyword="MaxFixed" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="MaxNotFixed" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="_MEM" Style="ASL Resource Template Terms" />
+				<Item Keyword="Memory24" Style="ASL Resource Template Terms" />
+				<Item Keyword="Memory32" Style="ASL Resource Template Terms" />
+				<Item Keyword="Memory32Fixed" Style="ASL Resource Template Terms" />
+				<Item Keyword="MEQ" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Method" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="MethodObj" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="MGE" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="MGT" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Mid" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="_MIF" Style="ASL Resource Template Terms" />
+				<Item Keyword="_MIN" Style="ASL Resource Template Terms" />
+				<Item Keyword="MinFixed" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="MinNotFixed" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="MLE" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="MLT" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Mod" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="_MOD" Style="ASL Resource Template Terms" />
+				<Item Keyword="_MTP" Style="ASL Resource Template Terms" />
+				<Item Keyword="MTR" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Multiply" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Mutex" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="MutexObj" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Name" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="NAnd" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="NoLock" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="NonCacheable" Style="ASL Parameter Keyword Terms" />
+				<Item
+					Keyword="NonISAOnlyRanges"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item Keyword="NoOp" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="NOr" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Not" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="NotBusMaster" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Notify" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="NotSerialized" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="ObjectType" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Offset" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="One" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Ones" Style="ASL Primary (Terminal) Terms" />
+				<Item
+					Keyword="OperationRegion"
+					Style="ASL Primary (Terminal) Terms"
+					/>
+				<Item Keyword="OpRegionObj" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Or" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Package" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="_PAR" Style="ASL Resource Template Terms" />
+				<Item Keyword="ParityTypeEven" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="ParityTypeMark" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="ParityTypeNone" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="ParityTypeOdd" Style="ASL Parameter Keyword Terms" />
+				<Item
+					Keyword="ParityTypeSpace"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item Keyword="PCC" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="PciBarTarget" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="PCI_Config" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="_PHA" Style="ASL Resource Template Terms" />
+				<Item Keyword="_PIN" Style="ASL Resource Template Terms" />
+				<Item Keyword="PkgObj" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="_POL" Style="ASL Resource Template Terms" />
+				<Item Keyword="PolarityHigh" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="PolarityLow" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="PosDecode" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="PowerResObj" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="PowerResource" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="_PPI" Style="ASL Resource Template Terms" />
+				<Item Keyword="_PPIC" Style="ASL Resource Template Terms" />
+				<Item Keyword="Prefetchable" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Preserve" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Printf" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Processor" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="ProcessorObj" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="PullDefault" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="PullDown" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="PullNone" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="PullUp" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="QWordAcc" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="QWordIO" Style="ASL Resource Template Terms" />
+				<Item Keyword="QWordMemory" Style="ASL Resource Template Terms" />
+				<Item Keyword="QWordSpace" Style="ASL Resource Template Terms" />
+				<Item Keyword="RawDataBuffer" Style="ASL Resource Template Terms" />
+				<Item Keyword="_RBO" Style="ASL Resource Template Terms" />
+				<Item Keyword="_RBW" Style="ASL Resource Template Terms" />
+				<Item Keyword="ReadOnly" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="ReadWrite" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="RefOf" Style="ASL Primary (Terminal) Terms" />
+				<Item
+					Keyword="RegionSpaceKeyword"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item Keyword="Register" Style="ASL Resource Template Terms" />
+				<Item Keyword="Release" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Reset" Style="ASL Primary (Terminal) Terms" />
+				<Item
+					Keyword="ResourceConsumer"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item
+					Keyword="ResourceProducer"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item
+					Keyword="ResourceTemplate"
+					Style="ASL Primary (Terminal) Terms"
+					/>
+				<Item Keyword="Return" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Revision" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="_RNG" Style="ASL Resource Template Terms" />
+				<Item Keyword="_RT" Style="ASL Resource Template Terms" />
+				<Item Keyword="_RW" Style="ASL Resource Template Terms" />
+				<Item Keyword="_RXL" Style="ASL Resource Template Terms" />
+				<Item Keyword="Scope" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Serialized" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Shared" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="SharedAndWake" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="ShiftLeft" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="ShiftRight" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="_SHR" Style="ASL Resource Template Terms" />
+				<Item Keyword="Signal" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="_SIZ" Style="ASL Resource Template Terms" />
+				<Item Keyword="SizeOf" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Sleep" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="_SLV" Style="ASL Resource Template Terms" />
+				<Item Keyword="SMBus" Style="ASL Parameter Keyword Terms" />
+				<Item
+					Keyword="SparseTranslation"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item Keyword="_SPE" Style="ASL Resource Template Terms" />
+				<Item Keyword="SPISerialbusV2" Style="ASL Resource Template Terms" />
+				<Item Keyword="Stall" Style="ASL Primary (Terminal) Terms" />
+				<Item
+					Keyword="StartDependentFn"
+					Style="ASL Resource Template Terms"
+					/>
+				<Item
+					Keyword="StartDependentFnNoPri"
+					Style="ASL Resource Template Terms"
+					/>
+				<Item Keyword="_STB" Style="ASL Resource Template Terms" />
+				<Item Keyword="StopBitsOne" Style="ASL Parameter Keyword Terms" />
+				<Item
+					Keyword="StopBitsOnePlusHalf"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item Keyword="StopBitsTwo" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="StopBitsZero" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Store" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="StrObj" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="SubDecode" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Subtract" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Switch" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="SystemCMOS" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="SystemIO" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="SystemMemory" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="ThermalZone" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="ThermalZoneObj" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="ThreeWireMode" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Timer" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="ToBCD" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="ToBuffer" Style="ASL Primary (Terminal) Terms" />
+				<Item
+					Keyword="ToDecimalString"
+					Style="ASL Primary (Terminal) Terms"
+					/>
+				<Item Keyword="ToHexString" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="ToInteger" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="ToPLD" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="ToString" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="ToUUID" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="_TRA" Style="ASL Resource Template Terms" />
+				<Item Keyword="Transfer16" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Transfer8" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Transfer8_16" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="_TRS" Style="ASL Resource Template Terms" />
+				<Item Keyword="_TSF" Style="ASL Resource Template Terms" />
+				<Item Keyword="_TTP" Style="ASL Resource Template Terms" />
+				<Item Keyword="_TXL" Style="ASL Resource Template Terms" />
+				<Item Keyword="_TYP" Style="ASL Resource Template Terms" />
+				<Item Keyword="TypeStatic" Style="ASL Parameter Keyword Terms" />
+				<Item
+					Keyword="TypeTranslation"
+					Style="ASL Parameter Keyword Terms"
+					/>
+				<Item
+					Keyword="UARTSerialBusV2"
+					Style="ASL Resource Template Terms"
+					/>
+				<Item Keyword="Unicode" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="UnknownObj" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Unload" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="_VEN" Style="ASL Resource Template Terms" />
+				<Item Keyword="VendorLong" Style="ASL Resource Template Terms" />
+				<Item Keyword="VendorShort" Style="ASL Resource Template Terms" />
+				<Item Keyword="Wait" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="While" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Width128Bit" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Width16Bit" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Width256Bit" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Width32Bit" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Width64Bit" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Width8Bit" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="WordAcc" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="WordBusNumber" Style="ASL Resource Template Terms" />
+				<Item Keyword="WordIO" Style="ASL Resource Template Terms" />
+				<Item Keyword="WordSpace" Style="ASL Resource Template Terms" />
+				<Item Keyword="WriteAsOnes" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="WriteAsZeros" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="WriteCombining" Style="ASL Parameter Keyword Terms" />
+				<Item Keyword="Xor" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="Zero" Style="ASL Primary (Terminal) Terms" />
+				<Item Keyword="\" Style="ASL Language" />
+				<Item Keyword="^" Style="ASL Language" />
 			</Keywords>
 		</Language>
 	</Languages>
