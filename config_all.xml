@@ -1045,7 +1045,7 @@
 		</Type>
 		<Type
 			Name="C Source File"
-			FileFilter="*.aslc"
+			FileFilter="*.aslc;*.uni"
 			Language="ANSI C Language"
 			ParsePattern=""
 			WordWrap="0"
@@ -2344,7 +2344,7 @@
 			SmartIndent="1"
 			ContainsSourceCode="1"
 			SyntaxFormatting="1"
-			UseRegexParsing="0"
+			UseRegexParsing="1"
 			SyntaxDecorations="1"
 			CommentStyles="1"
 			AllowSmartTab="1"
@@ -2357,9 +2357,16 @@
 			QOctalNum="0"
 			NonAlphaNumIdentChars="_$"
 			>
-			<CustomParsing/>
+			<CustomParsing>
+				<Expression
+					SymbolType="Macro"
+					Pattern="^\w*#string+\w+\([A-Za-z0-9_]+\)"
+					RegexType="Source Insight"
+					/>
+			</CustomParsing>
 			<Ranges/>
 			<Keywords>
+				<Item Keyword="#string" Style="Keyword" />
 				<Item Keyword="(" Style="Delimiter" />
 				<Item Keyword=")" Style="Delimiter" />
 				<Item Keyword="{" Style="Delimiter" />
