@@ -8232,12 +8232,12 @@
 					RegexType="Source Insight"
 					/>
 				<Expression
-					SymbolType="External Variable"
+					SymbolType="Variable"
 					Pattern="^\w*\([A-Za-z0-9]+\)\w*=+\w*[\\{]"
 					RegexType="Source Insight"
 					/>
 				<Expression
-					SymbolType="External Variable"
+					SymbolType="Variable"
 					Pattern="^\w*[A-Za-z0-9]+[.]+\([A-Za-z0-9]+\)\w*|"
 					RegexType="Source Insight"
 					/>
@@ -8335,7 +8335,7 @@
 					RegexType="Source Insight"
 					/>
 				<Expression
-					SymbolType="External Variable"
+					SymbolType="Variable"
 					Pattern="^\w*[A-Za-z0-9]+[.]+\([A-Za-z0-9]+\)\w*|"
 					RegexType="Source Insight"
 					/>
@@ -8345,32 +8345,32 @@
 					RegexType="Source Insight"
 					/>
 				<Expression
-					SymbolType="External Variable"
+					SymbolType="Variable"
 					Pattern="^\w*DEFINE+\w+\([A-Za-z0-9_]+\)\w*="
 					RegexType="Source Insight"
 					/>
 				<Expression
-					SymbolType="External Variable"
+					SymbolType="Variable"
 					Pattern="^\w*DEFINE+\w+[A-Za-z0-9_]+\w*=+\w*-D+\w*\([A-Za-z0-9_]+\)"
 					RegexType="Source Insight"
 					/>
 				<Expression
-					SymbolType="External Variable"
+					SymbolType="Variable"
 					Pattern="^\w*DEFINE+\w+[A-Za-z0-9_]+\w*=+\w*/D+\w*\([A-Za-z0-9_]+\)"
 					RegexType="Source Insight"
 					/>
 				<Expression
-					SymbolType="External Variable"
+					SymbolType="Variable"
 					Pattern="^\w*EDK_GLOBAL+\w+\([A-Za-z0-9_]+\)\w*="
 					RegexType="Source Insight"
 					/>
 				<Expression
-					SymbolType="External Variable"
+					SymbolType="Variable"
 					Pattern="^\w*EDK_GLOBAL+\w+[A-Za-z0-9_]+\w*=+\w*-D+\w*\([A-Za-z0-9_]+\)"
 					RegexType="Source Insight"
 					/>
 				<Expression
-					SymbolType="External Variable"
+					SymbolType="Variable"
 					Pattern="^\w*EDK_GLOBAL+\w+[A-Za-z0-9_]+\w*=+\w*/D+\w*\([A-Za-z0-9_]+\)"
 					RegexType="Source Insight"
 					/>
@@ -8497,12 +8497,12 @@
 					RegexType="Source Insight"
 					/>
 				<Expression
-					SymbolType="External Variable"
+					SymbolType="Variable"
 					Pattern="^\w*DEFINE+\w+\([A-Za-z0-9_]+\)\w*="
 					RegexType="Source Insight"
 					/>
 				<Expression
-					SymbolType="External Variable"
+					SymbolType="Variable"
 					Pattern="^\w*SET+\w+[A-Za-z0-9]+[.]+\([A-Za-z0-9]+\)\w*="
 					RegexType="Source Insight"
 					/>
