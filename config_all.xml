@@ -2093,6 +2093,41 @@
 			<ScreenFont name="Consolas" psize="10" fpfamily="49" charset="0" />
 			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
+		<Type
+			Name="EDK II DSC File"
+			FileFilter="*.dsc;*.env"
+			Language="EDK II Platform Description (DSC) Language"
+			ParsePattern=""
+			WordWrap="0"
+			ExpandTabs="1"
+			EnterKeyIsEOL="1"
+			StatusbarMode="0"
+			AddToProject="1"
+			EmulateScreenFontsForPrinting="1"
+			LineUpWhiteSpace="1"
+			VisibleTabs="0"
+			VisibleSpaces="0"
+			ShowLineNumbers="1"
+			ShowRightMargin="0"
+			ShowPageBreaks="0"
+			UseSymbolPane="1"
+			UseOverview="1"
+			AllowAutocomplete="1"
+			AllowSmartPaste="1"
+			AllowSnippets="1"
+			ShowRefHighlights="0"
+			TabWidth="2"
+			MarginWidth="120"
+			IndentWidth="1"
+			AutoInsertPairs="0"
+			ParsePatternSymbolType=""
+			AutoIndentMode="1"
+			IndentOpenBrace="1"
+			IndentCloseBrace="1"
+			>
+			<ScreenFont name="Consolas" psize="10" fpfamily="49" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+		</Type>
 	</FileTypes>
 	<Styles
 		StyleAppVer="4.00.0085"
@@ -8235,6 +8270,163 @@
 				<Item Keyword="PACKAGE_NAME" Style="EDK II Language" />
 				<Item Keyword="PACKAGE_UNI_FILE" Style="EDK II Language" />
 				<Item Keyword="PACKAGE_VERSION" Style="EDK II Language" />
+			</Keywords>
+		</Language>
+		<Language
+			Name="EDK II Platform Description (DSC) Language"
+			Comment="Published from https://github.com/wujingbo/Source-Insight-4.0-for-edk2"
+			CaseSensitive="1"
+			CPreprocessor="1"
+			SmartIndent="0"
+			ContainsSourceCode="1"
+			SyntaxFormatting="1"
+			UseRegexParsing="1"
+			SyntaxDecorations="0"
+			CommentStyles="0"
+			AllowSmartTab="0"
+			DetectNumbers="1"
+			CHexNum="1"
+			IntelHexNum="0"
+			MotorolaHexNum="0"
+			BasicHexNum="0"
+			IntelOctalNum="0"
+			QOctalNum="0"
+			NonAlphaNumIdentChars="_!"
+			>
+			<CustomParsing>
+				<Expression
+					SymbolType="Class"
+					Pattern="\([\[]+[A-Za-z0-9._, ]+[\]]\)"
+					RegexType="Source Insight"
+					/>
+				<Expression
+					SymbolType="External Variable"
+					Pattern="^\w*[A-Za-z0-9]+[.]+\([A-Za-z0-9]+\)\w*|"
+					RegexType="Source Insight"
+					/>
+				<Expression
+					SymbolType="#-Directive"
+					Pattern="^!\([A-Za-z0-9()!=&gt;&lt;_ $/.]+\)"
+					RegexType="Source Insight"
+					/>
+				<Expression
+					SymbolType="External Variable"
+					Pattern="^\w*DEFINE+\w+\([A-Za-z0-9_]+\)\w*="
+					RegexType="Source Insight"
+					/>
+				<Expression
+					SymbolType="External Variable"
+					Pattern="^\w*DEFINE+\w+[A-Za-z0-9_]+\w*=+\w*-D+\w*\([A-Za-z0-9_]+\)"
+					RegexType="Source Insight"
+					/>
+				<Expression
+					SymbolType="External Variable"
+					Pattern="^\w*DEFINE+\w+[A-Za-z0-9_]+\w*=+\w*/D+\w*\([A-Za-z0-9_]+\)"
+					RegexType="Source Insight"
+					/>
+				<Expression
+					SymbolType="External Variable"
+					Pattern="^\w*EDK_GLOBAL+\w+\([A-Za-z0-9_]+\)\w*="
+					RegexType="Source Insight"
+					/>
+				<Expression
+					SymbolType="External Variable"
+					Pattern="^\w*EDK_GLOBAL+\w+[A-Za-z0-9_]+\w*=+\w*-D+\w*\([A-Za-z0-9_]+\)"
+					RegexType="Source Insight"
+					/>
+				<Expression
+					SymbolType="External Variable"
+					Pattern="^\w*EDK_GLOBAL+\w+[A-Za-z0-9_]+\w*=+\w*/D+\w*\([A-Za-z0-9_]+\)"
+					RegexType="Source Insight"
+					/>
+			</CustomParsing>
+			<Ranges>
+				<Range
+					Type="Line"
+					AllowNesting="0"
+					ParseInside="0"
+					ReadOnly="0"
+					StyleName="Comment Single Line"
+					StyleDelimiter="1"
+					StartString="#"
+					EscapeString=""
+					ValidateColumns="0"
+					FirstColumn="0"
+					LastColumn="0"
+					/>
+				<Range
+					Type="Multiline"
+					AllowNesting="0"
+					ParseInside="0"
+					ReadOnly="0"
+					StyleName="String"
+					StyleDelimiter="1"
+					StartString="&apos;"
+					EndString="&apos;"
+					EscapeString="\"
+					ValidateColumns="0"
+					FirstColumn="0"
+					LastColumn="0"
+					/>
+				<Range
+					Type="Multiline"
+					AllowNesting="0"
+					ParseInside="0"
+					ReadOnly="0"
+					StyleName="String"
+					StyleDelimiter="1"
+					StartString="&quot;"
+					EndString="&quot;"
+					EscapeString="\"
+					ValidateColumns="0"
+					FirstColumn="0"
+					LastColumn="0"
+					/>
+				<Range
+					Type="Multiline"
+					AllowNesting="0"
+					ParseInside="0"
+					ReadOnly="0"
+					StyleName="String"
+					StyleDelimiter="1"
+					StartString="L&quot;"
+					EndString="&quot;"
+					EscapeString="\"
+					ValidateColumns="0"
+					FirstColumn="0"
+					LastColumn="0"
+					/>
+			</Ranges>
+			<Keywords>
+				<Item Keyword="!else" Style="Directive" />
+				<Item Keyword="!elseif" Style="Directive" />
+				<Item Keyword="!endif" Style="Directive" />
+				<Item Keyword="!if" Style="Directive" />
+				<Item Keyword="!ifdef" Style="Directive" />
+				<Item Keyword="!ifndef" Style="Directive" />
+				<Item Keyword="!include" Style="Keyword" />
+				<Item Keyword="BUILD_NUMBER" Style="EDK II Language" />
+				<Item Keyword="BUILD_TARGETS" Style="EDK II Language" />
+				<Item Keyword="DEFINE" Style="EDK II Language" />
+				<Item Keyword="DSC_SPECIFICATION" Style="EDK II Language" />
+				<Item Keyword="EDK_GLOBAL" Style="EDK II Language" />
+				<Item
+					Keyword="FIX_LOAD_TOP_MEMORY_ADDRESS"
+					Style="EDK II Language"
+					/>
+				<Item Keyword="FLASH_DEFINITION" Style="EDK II Language" />
+				<Item Keyword="ISO_LANGUAGES" Style="EDK II Language" />
+				<Item Keyword="OUTPUT_DIRECTORY" Style="EDK II Language" />
+				<Item Keyword="PCD_INFO_GENERATION" Style="EDK II Language" />
+				<Item Keyword="PCD_VAR_CHECK_GENERATION" Style="EDK II Language" />
+				<Item Keyword="PLATFORM_GUID" Style="EDK II Language" />
+				<Item Keyword="PLATFORM_NAME" Style="EDK II Language" />
+				<Item Keyword="PLATFORM_VERSION" Style="EDK II Language" />
+				<Item Keyword="RFC_LANGUAGES" Style="EDK II Language" />
+				<Item Keyword="SKUID_IDENTIFIER" Style="EDK II Language" />
+				<Item Keyword="SUPPORTED_ARCHITECTURES" Style="EDK II Language" />
+				<Item Keyword="TIME_STAMP_FILE" Style="EDK II Language" />
+				<Item Keyword="VPD_TOOL_GUID" Style="EDK II Language" />
 			</Keywords>
 		</Language>
 	</Languages>
