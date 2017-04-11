@@ -8883,7 +8883,7 @@
 					/>
 				<Expression
 					SymbolType="#-Directive"
-					Pattern="^\w*#include+\w*[&lt;&quot;]+\([A-Za-z0-9_.\\]+\)[&quot;&gt;]"
+					Pattern="^\w*#include+\w*[&lt;&quot;]+\([A-Za-z0-9_.\\/]+\)[&quot;&gt;]"
 					RegexType="Source Insight"
 					/>
 			</CustomParsing>
