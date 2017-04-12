@@ -1714,7 +1714,7 @@
 			Language="SI Macro Language"
 			ParsePattern=""
 			WordWrap="0"
-			ExpandTabs="0"
+			ExpandTabs="1"
 			EnterKeyIsEOL="1"
 			StatusbarMode="0"
 			AddToProject="1"
