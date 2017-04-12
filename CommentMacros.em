@@ -44,7 +44,7 @@ function InitGlobalVars ()
 //   Need sync. with InitGlobalVars() if support new language
 //
 // Parameters
-//   hbuf - handle to file buffer, make sure not nil before call this function
+//   hbuf - handle to file buffer, make sure not hnil before call this function
 //
 // Return
 //   RetString - Comment String with current language
@@ -59,7 +59,7 @@ function GetCommentStringByLanguage (hbuf)
         BeInit = True;
     }
 
-    Props = GetBufProps(hbuf)
+    Props = GetBufProps (hbuf)
 
     if (Props.Language == Language_ASL ||
         Props.Language == Language_VFR) {
@@ -94,7 +94,7 @@ macro CommentSelectedLines ()
     hbuf = GetCurrentBuf ()
     hwnd = GetCurrentWnd ()
 
-    if (hbuf == nil || hwnd == nil) stop
+    if (hbuf == hnil || hwnd == hnil) stop
 
     CommentStr = GetCommentStringByLanguage (hbuf)
     if (CommentStr == nil) {
@@ -132,7 +132,7 @@ macro UnCommentSelectedLines()
     hbuf = GetCurrentBuf ()
     hwnd = GetCurrentWnd ()
 
-    if (hbuf == nil || hwnd == nil) stop
+    if (hbuf == hnil || hwnd == hnil) stop
 
     CommentStr = GetCommentStringByLanguage (hbuf)
     if (CommentStr == nil) {
