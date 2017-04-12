@@ -423,6 +423,8 @@
 	</Menus>
 	<Keymaps>
 		<Main>
+			<item Command="UnCommentSelectedLines" Keycode="(A)R" Allocated="1" />
+			<item Command="CommentSelectedLines" Keycode="(A)C" Allocated="1" />
 			<item Command="Symbol Info..." Keycode="(C)mouse(R+SEL)" />
 			<item Command="Pick Window..." Keycode="(C)B" />
 			<item Command="Load Layout A" Keycode="(CS)F1" />
