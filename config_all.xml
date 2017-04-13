@@ -423,6 +423,12 @@
 	</Menus>
 	<Keymaps>
 		<Main>
+			<item
+				Command="AppendTrackingLabelsAndComment"
+				Keycode="F10"
+				Allocated="1"
+				/>
+			<item Command="AppendTrackingLabels" Keycode="F9" Allocated="1" />
 			<item Command="UnCommentSelectedLines" Keycode="(A)R" Allocated="1" />
 			<item Command="CommentSelectedLines" Keycode="(A)C" Allocated="1" />
 			<item Command="Symbol Info..." Keycode="(C)mouse(R+SEL)" />
@@ -439,8 +445,6 @@
 			<item Command="Tile Two Windows" Keycode="F6" />
 			<item Command="Activate Project Symbol List" Keycode="F7" />
 			<item Command="Highlight Word" Keycode="F8" />
-			<item Command="Indent Left" Keycode="F9" />
-			<item Command="Indent Right" Keycode="F10" />
 			<item Command="Full Screen" Keycode="F11" />
 			<item Command="Incremental Search..." Keycode="F12" />
 			<item Command="Mono Font View" Keycode="(A)F12" />
@@ -631,6 +635,7 @@
 			<item Command="Back Tab" Keycode="(S)Tab" />
 			<item Command="Simple Tab" Keycode="(CA)Tab" />
 			<item Command="Show File in Explorer..." Keycode="(C)D" />
+			<item Command="SetTrackingLabelInfo" Keycode="(A)B" Allocated="1" />
 		</Main>
 	</Keymaps>
 	<CustomCommands>

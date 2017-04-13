@@ -5,6 +5,9 @@
 //
 //   1. Comment Selected Lines (Alt+C)
 //   2. Un-Comment Selected Lines (Alt+R)
+//   3. Set Tracking Label Information (Alt+B)
+//   4. Append Tracking Labels (F9)
+//   5. Append Tracking Labels and Comment (F10)
 //
 
 //=============================================================================
@@ -99,7 +102,7 @@ macro CommentSelectedLines ()
     CommentStr = GetCommentStringByLanguage (hbuf)
     if (CommentStr == nil) {
         Comment_Lines  // Default comment lines command
-        stop
+        return         // Do not "stop" executing macro if macro calling macro
     }
 
     //
@@ -160,6 +163,159 @@ macro UnCommentSelectedLines()
         } else {
             continue
         }
+    }
+}
+
+//=============================================================================
+// Get Label Information
+//   Format: [Username]-Label-Description
+//=============================================================================
+function GetLabelInfo ()
+{
+    Debug ("Get Label Information")
+
+    global LabelInfo
+    var    TempStr, ProgEnvInfo
+
+    if (LabelInfo != nil) {
+        return
+    }
+
+    ProgEnvInfo = GetProgramEnvironmentInfo()
+
+    LabelInfo = "[" # ProgEnvInfo.UserName # "]"
+                # "-" #
+                Ask("Enter lablel (ex: Feature0001)")
+                # "-" #
+                Ask("Enter description (ex: Append Tracking Labels)")
+
+    Msg ("Your LabelInfo: @LabelInfo@")
+}
+
+//=============================================================================
+// Set Tracking Label Information
+//=============================================================================
+macro SetTrackingLabelInfo ()
+{
+    LabelInfo = nil
+    GetLabelInfo ()
+}
+
+//=============================================================================
+// Append Tracking Labels
+//
+// Example for single line:
+//   ... //[Username]-Label-Description
+//
+// Example for multi-lines:
+//   //[Username]-Label-Description-Start
+//   ...
+//   ...
+//   //[Username]-Label-Description-End
+//
+//=============================================================================
+macro AppendTrackingLabels ()
+{
+    Debug ("Append Tracking Labels")
+
+    var hbuf, hwnd, ProgEnvInfo
+    var CommentStr, FirstLineNum, LastLineNum
+    var CommentLength, LineLength
+
+    hbuf = GetCurrentBuf ()
+    hwnd = GetCurrentWnd ()
+
+    if (hbuf == hnil || hwnd == hnil) stop
+
+    GetLabelInfo ()
+
+    CommentStr   = GetCommentStringByLanguage (hbuf)
+    FirstLineNum = GetWndSelLnFirst (hwnd)
+    LastLineNum  = GetWndSelLnLast (hwnd)
+
+    if (CommentStr == nil) {
+
+        //
+        // Get comment string here.
+        //
+        LineLength = GetBufLineLength (hbuf, FirstLineNum)
+        Comment_Lines  // Default comment lines command
+        CommentLength = GetBufLineLength (hbuf, FirstLineNum)
+
+        if (CommentLength == LineLength) stop  // Do nothing if no comment string be added by default comment lines command
+
+        CommentStr = strmid (GetBufLine (hbuf, FirstLineNum), 0, CommentLength - LineLength)
+        Un_Comment_Lines  // Default un-comment lines command
+    }
+
+    //
+    // Append Tracking Labels
+    //
+    if (FirstLineNum == LastLineNum) {
+
+        PutBufLine (hbuf, FirstLineNum, GetBufLine (hbuf, FirstLineNum) # "  " # CommentStr # LabelInfo)
+    } else {
+
+        InsBufLine (hbuf, FirstLineNum,    CommentStr # LabelInfo # "-Start")
+        InsBufLine (hbuf, LastLineNum + 2, CommentStr # LabelInfo # "-End")
+    }
+}
+
+//=============================================================================
+// Append Tracking Labels and Comment
+//
+// Example for single line:
+//   //... //[Username]-Label-Description
+//
+// Example for multi-lines:
+//   //[Username]-Label-Description-Start
+//   //...
+//   //...
+//   //[Username]-Label-Description-End
+//
+//=============================================================================
+macro AppendTrackingLabelsAndComment ()
+{
+    Debug ("Append Tracking Labels and Comment")
+
+    var hbuf, hwnd, ProgEnvInfo
+    var CommentStr, FirstLineNum, LastLineNum
+    var CommentLength, LineLength
+
+    hbuf = GetCurrentBuf ()
+    hwnd = GetCurrentWnd ()
+
+    if (hbuf == hnil || hwnd == hnil) stop
+
+    GetLabelInfo()
+
+    FirstLineNum = GetWndSelLnFirst (hwnd)
+    LastLineNum  = GetWndSelLnLast  (hwnd)
+    LineLength = GetBufLineLength (hbuf, FirstLineNum)
+
+    if (FirstLineNum == LastLineNum && LineLength == 0) stop  // Do nothing if only one empty line be selected
+
+    CommentSelectedLines ()
+
+    CommentLength = GetBufLineLength (hbuf, FirstLineNum)
+
+    if (CommentLength == LineLength) stop   // Do nothing if no comment string be added
+
+    //
+    // Get comment string here
+    //
+    CommentStr = strmid (GetBufLine (hbuf, FirstLineNum), 0, CommentLength - LineLength)
+
+    //
+    // Append Tracking Labels
+    //
+    if (FirstLineNum == LastLineNum) {
+
+        PutBufLine (hbuf, FirstLineNum, GetBufLine (hbuf, FirstLineNum) # "  " # CommentStr # LabelInfo)
+    } else {
+
+        InsBufLine (hbuf, FirstLineNum,    CommentStr # LabelInfo # "-Start")
+        InsBufLine (hbuf, LastLineNum + 2, CommentStr # LabelInfo # "-End")
     }
 }
 
