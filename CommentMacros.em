@@ -205,7 +205,7 @@ macro SetTrackingLabelInfo ()
 // Append Tracking Labels
 //
 // Example for single line:
-//   ... //[Username]-Label-Description
+//   ...  //[Username]-Label-Description
 //
 // Example for multi-lines:
 //   //[Username]-Label-Description-Start
@@ -263,9 +263,10 @@ macro AppendTrackingLabels ()
 
 //=============================================================================
 // Append Tracking Labels and Comment
+//   Depend on macro CommentSelectedLines()
 //
 // Example for single line:
-//   //... //[Username]-Label-Description
+//   //...  //[Username]-Label-Description
 //
 // Example for multi-lines:
 //   //[Username]-Label-Description-Start
