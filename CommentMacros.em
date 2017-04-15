@@ -28,6 +28,7 @@ function InitGlobalVars ()
 
     global Language_ASL, Language_FDF, Language_INF
     global Language_DSC, Language_DEC, Language_VFR
+    global Language_BAT
 
     Language_ASL = "ACPI Source Language (ASL)"
     Language_FDF = "EDK II Flash Description File (FDF) Language"
@@ -35,11 +36,13 @@ function InitGlobalVars ()
     Language_DSC = "EDK II Platform Description (DSC) Language"
     Language_DEC = "EDK II Package Declaration (DEC) Language"
     Language_VFR = "EDK II Visual Forms Representation (VFR) Language"
+    Language_BAT = "Microsoft Batch Scripts"
 
-    global Comment_DoubleSlash, Comment_Number
+    global Comment_DoubleSlash, Comment_Number, Comment_Remarks
 
     Comment_DoubleSlash = "//"
     Comment_Number      = "#"
+    Comment_Remarks     = "REM "
 }
 
 //=============================================================================
@@ -74,12 +77,34 @@ function GetCommentStringByLanguage (hbuf)
                Props.Language == Language_DEC) {
 
         RetString = Comment_Number
+    } else if (Props.Language == Language_BAT) {
+
+        RetString = Comment_Remarks
     } else {
 
         RetString = nil
     }
 
     return RetString
+}
+
+//=============================================================================
+// Dose comment string Must at Lines Begin?
+//
+// Parameters
+//   CommentStr - Comment string for checking
+//
+// Return
+//   True  - Comment string must be at Lines Begin
+//   False - Comment string could be any position at line
+//=============================================================================
+function MustAtLinesBegin (CommentStr)
+{
+    if (CommentStr == Comment_Remarks) {
+        return True
+    } else {
+        return False
+    }
 }
 
 //=============================================================================
@@ -251,7 +276,7 @@ macro AppendTrackingLabels ()
     //
     // Append Tracking Labels
     //
-    if (FirstLineNum == LastLineNum) {
+    if (FirstLineNum == LastLineNum && MustAtLinesBegin (CommentStr) == False) {
 
         PutBufLine (hbuf, FirstLineNum, GetBufLine (hbuf, FirstLineNum) # "  " # CommentStr # LabelInfo)
     } else {

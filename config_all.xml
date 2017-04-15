@@ -1508,10 +1508,10 @@
 		<Type
 			Name="Batch File"
 			FileFilter="*.bat;*.cmd"
-			Language="None"
+			Language="Microsoft Batch Scripts"
 			ParsePattern="^:\(.*\)$"
 			WordWrap="0"
-			ExpandTabs="0"
+			ExpandTabs="1"
 			EnterKeyIsEOL="1"
 			StatusbarMode="0"
 			AddToProject="1"
@@ -1525,12 +1525,12 @@
 			UseSymbolPane="1"
 			UseOverview="1"
 			AllowAutocomplete="1"
-			AllowSmartPaste="0"
+			AllowSmartPaste="1"
 			AllowSnippets="1"
-			ShowRefHighlights="0"
-			TabWidth="4"
+			ShowRefHighlights="1"
+			TabWidth="2"
 			MarginWidth="120"
-			IndentWidth="4"
+			IndentWidth="0"
 			AutoInsertPairs="1"
 			ParsePatternSymbolType="Custom Tag"
 			AutoIndentMode="1"
@@ -8910,6 +8910,166 @@
 					/>
 			</Ranges>
 			<Keywords/>
+		</Language>
+		<Language
+			Name="Microsoft Batch Scripts"
+			Comment="Published from https://github.com/wujingbo/Source-Insight-4.0-for-edk2"
+			CaseSensitive="0"
+			CPreprocessor="0"
+			SmartIndent="0"
+			ContainsSourceCode="1"
+			SyntaxFormatting="1"
+			UseRegexParsing="1"
+			SyntaxDecorations="0"
+			CommentStyles="0"
+			AllowSmartTab="0"
+			DetectNumbers="1"
+			CHexNum="0"
+			IntelHexNum="0"
+			MotorolaHexNum="0"
+			BasicHexNum="0"
+			IntelOctalNum="0"
+			QOctalNum="0"
+			NonAlphaNumIdentChars="_.\"
+			>
+			<CustomParsing>
+				<Expression
+					SymbolType="Variable"
+					Pattern="^\w*@*\w*set+\w+&quot;*\w*\([A-Za-z0-9_]+\)\w*="
+					RegexType="Source Insight"
+					/>
+			</CustomParsing>
+			<Ranges>
+				<Range
+					Type="Line"
+					AllowNesting="0"
+					ParseInside="0"
+					ReadOnly="0"
+					StyleName="Comment Single Line"
+					StyleDelimiter="1"
+					StartString="REM "
+					EscapeString=""
+					ValidateColumns="0"
+					FirstColumn="0"
+					LastColumn="0"
+					/>
+			</Ranges>
+			<Keywords>
+				<Item Keyword="%" Style="Keyword" />
+				<Item Keyword="&amp;" Style="Keyword" />
+				<Item Keyword="&lt;" Style="Operator" />
+				<Item Keyword="&lt;&amp;" Style="Operator" />
+				<Item Keyword="&gt;" Style="Operator" />
+				<Item Keyword="&gt;&amp;" Style="Operator" />
+				<Item Keyword="&gt;&gt;" Style="Operator" />
+				<Item Keyword="@" Style="Keyword" />
+				<Item Keyword="assoc" Style="Keyword" />
+				<Item Keyword="attrib" Style="Keyword" />
+				<Item Keyword="bcdedit" Style="Keyword" />
+				<Item Keyword="break" Style="Keyword" />
+				<Item Keyword="cacls" Style="Keyword" />
+				<Item Keyword="call" Style="Keyword" />
+				<Item Keyword="cd" Style="Keyword" />
+				<Item Keyword="chcp" Style="Keyword" />
+				<Item Keyword="chdir" Style="Keyword" />
+				<Item Keyword="chkdsk" Style="Keyword" />
+				<Item Keyword="chkntfs" Style="Keyword" />
+				<Item Keyword="cls" Style="Keyword" />
+				<Item Keyword="cmd" Style="Keyword" />
+				<Item Keyword="color" Style="Keyword" />
+				<Item Keyword="comp" Style="Keyword" />
+				<Item Keyword="compact" Style="Keyword" />
+				<Item Keyword="convert" Style="Keyword" />
+				<Item Keyword="copy" Style="Keyword" />
+				<Item Keyword="date" Style="Keyword" />
+				<Item Keyword="defined" Style="Keyword" />
+				<Item Keyword="del" Style="Keyword" />
+				<Item Keyword="delims" Style="Keyword" />
+				<Item Keyword="dir" Style="Keyword" />
+				<Item Keyword="diskcomp" Style="Keyword" />
+				<Item Keyword="diskcopy" Style="Keyword" />
+				<Item Keyword="diskpart" Style="Keyword" />
+				<Item Keyword="do" Style="Keyword" />
+				<Item Keyword="doskey" Style="Keyword" />
+				<Item Keyword="driverquery" Style="Keyword" />
+				<Item Keyword="echo" Style="Keyword" />
+				<Item Keyword="echo." Style="Keyword" />
+				<Item Keyword="endlocal" Style="Keyword" />
+				<Item Keyword="EOF" Style="Keyword" />
+				<Item Keyword="eol" Style="Keyword" />
+				<Item Keyword="EQU" Style="Keyword" />
+				<Item Keyword="erase" Style="Keyword" />
+				<Item Keyword="errorlevel" Style="Keyword" />
+				<Item Keyword="exist" Style="Keyword" />
+				<Item Keyword="exit" Style="Keyword" />
+				<Item Keyword="fc" Style="Keyword" />
+				<Item Keyword="find" Style="Keyword" />
+				<Item Keyword="findstr" Style="Keyword" />
+				<Item Keyword="for" Style="Keyword" />
+				<Item Keyword="format" Style="Keyword" />
+				<Item Keyword="fsutil" Style="Keyword" />
+				<Item Keyword="ftype" Style="Keyword" />
+				<Item Keyword="GEQ" Style="Keyword" />
+				<Item Keyword="goto" Style="Keyword" />
+				<Item Keyword="gpresult" Style="Keyword" />
+				<Item Keyword="graftabl" Style="Keyword" />
+				<Item Keyword="GTR" Style="Keyword" />
+				<Item Keyword="help" Style="Keyword" />
+				<Item Keyword="icacls" Style="Keyword" />
+				<Item Keyword="if" Style="Keyword" />
+				<Item Keyword="in" Style="Keyword" />
+				<Item Keyword="label" Style="Keyword" />
+				<Item Keyword="LEQ" Style="Keyword" />
+				<Item Keyword="LSS" Style="Keyword" />
+				<Item Keyword="md" Style="Keyword" />
+				<Item Keyword="mkdir" Style="Keyword" />
+				<Item Keyword="mklink" Style="Keyword" />
+				<Item Keyword="mode" Style="Keyword" />
+				<Item Keyword="more" Style="Keyword" />
+				<Item Keyword="move" Style="Keyword" />
+				<Item Keyword="NEQ" Style="Keyword" />
+				<Item Keyword="not" Style="Keyword" />
+				<Item Keyword="openfiles" Style="Keyword" />
+				<Item Keyword="path" Style="Keyword" />
+				<Item Keyword="pause" Style="Keyword" />
+				<Item Keyword="popd" Style="Keyword" />
+				<Item Keyword="print" Style="Keyword" />
+				<Item Keyword="prompt" Style="Keyword" />
+				<Item Keyword="pushd" Style="Keyword" />
+				<Item Keyword="rd" Style="Keyword" />
+				<Item Keyword="recover" Style="Keyword" />
+				<Item Keyword="rem" Style="Keyword" />
+				<Item Keyword="ren" Style="Keyword" />
+				<Item Keyword="rename" Style="Keyword" />
+				<Item Keyword="replace" Style="Keyword" />
+				<Item Keyword="rmdir" Style="Keyword" />
+				<Item Keyword="robocopy" Style="Keyword" />
+				<Item Keyword="sc" Style="Keyword" />
+				<Item Keyword="schtasks" Style="Keyword" />
+				<Item Keyword="set" Style="Keyword" />
+				<Item Keyword="setlocal" Style="Keyword" />
+				<Item Keyword="shift" Style="Keyword" />
+				<Item Keyword="shutdown" Style="Keyword" />
+				<Item Keyword="skip" Style="Keyword" />
+				<Item Keyword="sort" Style="Keyword" />
+				<Item Keyword="start" Style="Keyword" />
+				<Item Keyword="subst" Style="Keyword" />
+				<Item Keyword="systeminfo" Style="Keyword" />
+				<Item Keyword="taskkill" Style="Keyword" />
+				<Item Keyword="tasklist" Style="Keyword" />
+				<Item Keyword="time" Style="Keyword" />
+				<Item Keyword="title" Style="Keyword" />
+				<Item Keyword="tokens" Style="Keyword" />
+				<Item Keyword="tree" Style="Keyword" />
+				<Item Keyword="type" Style="Keyword" />
+				<Item Keyword="usebackq" Style="Keyword" />
+				<Item Keyword="ver" Style="Keyword" />
+				<Item Keyword="verify" Style="Keyword" />
+				<Item Keyword="vol" Style="Keyword" />
+				<Item Keyword="wmic" Style="Keyword" />
+				<Item Keyword="xcopy" Style="Keyword" />
+				<Item Keyword="|" Style="Operator" />
+			</Keywords>
 		</Language>
 	</Languages>
 	<ParsingOptions>
