@@ -2258,7 +2258,7 @@
 		<Style
 			Name="String"
 			FixedWhiteSpace="0"
-			TextColor="#ffff80"
+			TextColor="#ffffff"
 			BackColor="#3c3c3c"
 			/>
 		<Style Name="Keyword" TextColor="#008000" />
@@ -2306,7 +2306,7 @@
 		<Style
 			Name="Declare Function"
 			KeepWithNextLine="1"
-			TextColor="#ffffff"
+			TextColor="#ffff80"
 			ParentStyle="Declaration"
 			/>
 		<Style Name="Declare Macro" ParentStyle="Declaration" />
