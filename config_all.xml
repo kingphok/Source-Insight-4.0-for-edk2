@@ -8310,12 +8310,12 @@
 					/>
 				<Expression
 					SymbolType="Variable"
-					Pattern="^\w*\([A-Za-z0-9]+\)\w*=+\w*[\\{]"
+					Pattern="^\w*\([A-Za-z0-9_]+\)\w*=+\w*[\\{]"
 					RegexType="Source Insight"
 					/>
 				<Expression
 					SymbolType="Variable"
-					Pattern="^\w*[A-Za-z0-9]+[.]+\([A-Za-z0-9]+\)\w*|"
+					Pattern="^\w*[A-Za-z0-9_]+[.]+\([A-Za-z0-9_]+\)\w*|"
 					RegexType="Source Insight"
 					/>
 			</CustomParsing>
@@ -8580,7 +8580,7 @@
 					/>
 				<Expression
 					SymbolType="Variable"
-					Pattern="^\w*SET+\w+[A-Za-z0-9]+[.]+\([A-Za-z0-9]+\)\w*="
+					Pattern="^\w*SET+\w+[A-Za-z0-9_]+[.]+\([A-Za-z0-9_]+\)\w*="
 					RegexType="Source Insight"
 					/>
 			</CustomParsing>
