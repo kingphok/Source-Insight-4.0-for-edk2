@@ -25,7 +25,7 @@
 			StatusBar="1"
 			PageNumInStatusbar="0"
 			MainToolBar="1"
-			HorizScrollBar="0"
+			HorizScrollBar="1"
 			VertScrollBar="0"
 			EnhancedVertScrollBar="1"
 			ScalePercent="100"
@@ -164,7 +164,7 @@
 		AnnotGoto="1"
 		AnnotEndBrace="1"
 		AnnotEndBraceLongOnly="1"
-		ScaleNestedParens="1"
+		ScaleNestedParens="0"
 		/>
 	<DisplayColors>
 		<Item Name="DefaultText" Color="#ebebeb" />
@@ -1052,7 +1052,7 @@
 		</Type>
 		<Type
 			Name="C Source File"
-			FileFilter="*.aslc;*.uni"
+			FileFilter="*.c;*.h;*.aslc;*.uni"
 			Language="ANSI C Language"
 			ParsePattern=""
 			WordWrap="0"
@@ -1087,7 +1087,7 @@
 		</Type>
 		<Type
 			Name="C/C++ Source File"
-			FileFilter="*.c;*.h;*.cpp;*.hpp;*.cxx;*.hxx"
+			FileFilter="*.cpp;*.hpp;*.cxx;*.hxx"
 			Language="C/C++ Language"
 			ParsePattern=""
 			WordWrap="0"
