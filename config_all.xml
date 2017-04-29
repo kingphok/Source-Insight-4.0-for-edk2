@@ -1052,7 +1052,7 @@
 		</Type>
 		<Type
 			Name="C Source File"
-			FileFilter="*.c;*.h;*.aslc;*.uni"
+			FileFilter="*.c;*.h;*.aslc;*.act;*.uni;*.idf;*.dxs"
 			Language="ANSI C Language"
 			ParsePattern=""
 			WordWrap="0"
@@ -1262,7 +1262,7 @@
 		</Type>
 		<Type
 			Name="x86 Asm Source File"
-			FileFilter="*.asm;*.inc"
+			FileFilter="*.asm;*.inc;*.nasm;*.asm16;*.nasmb"
 			Language="x86 Asm Language"
 			ParsePattern=""
 			WordWrap="0"
@@ -2102,7 +2102,7 @@
 		</Type>
 		<Type
 			Name="EDK II DSC File"
-			FileFilter="*.dsc;*.env"
+			FileFilter="*.dsc;*.env;*.template"
 			Language="EDK II Platform Description (DSC) Language"
 			ParsePattern=""
 			WordWrap="0"
@@ -2207,7 +2207,7 @@
 		</Type>
 		<Type
 			Name="EDK II VFR File"
-			FileFilter="*.vfr;*.vfi"
+			FileFilter="*.vfr;*.vfi;*.hfr"
 			Language="EDK II Visual Forms Representation (VFR) Language"
 			ParsePattern=""
 			WordWrap="0"
@@ -2544,6 +2544,11 @@
 				<Expression
 					SymbolType="Macro"
 					Pattern="^\w*#string+\w+\([A-Za-z0-9_]+\)"
+					RegexType="Source Insight"
+					/>
+				<Expression
+					SymbolType="Macro"
+					Pattern="^\w*#image+\w+\([A-Za-z0-9_]+\)"
 					RegexType="Source Insight"
 					/>
 			</CustomParsing>
@@ -8408,7 +8413,7 @@
 			<CustomParsing>
 				<Expression
 					SymbolType="Class"
-					Pattern="\([\[]+[A-Za-z0-9._, ]+[\]]\)"
+					Pattern="\([\[]+[A-Za-z0-9._, \-]+[\]]\)"
 					RegexType="Source Insight"
 					/>
 				<Expression
