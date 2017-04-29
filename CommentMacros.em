@@ -28,7 +28,7 @@ function InitGlobalVars ()
 
     global Language_ASL, Language_FDF, Language_INF
     global Language_DSC, Language_DEC, Language_VFR
-    global Language_BAT
+    global Language_BAT, Language_ASM
 
     Language_ASL = "ACPI Source Language (ASL)"
     Language_FDF = "EDK II Flash Description File (FDF) Language"
@@ -37,12 +37,15 @@ function InitGlobalVars ()
     Language_DEC = "EDK II Package Declaration (DEC) Language"
     Language_VFR = "EDK II Visual Forms Representation (VFR) Language"
     Language_BAT = "Microsoft Batch Scripts"
+    Language_ASM = "x86 Asm Language"
 
     global Comment_DoubleSlash, Comment_Number, Comment_Remarks
+    global Comment_SemiColon
 
     Comment_DoubleSlash = "//"
     Comment_Number      = "#"
     Comment_Remarks     = "REM "
+    Comment_SemiColon   = ";"
 }
 
 //=============================================================================
@@ -80,6 +83,9 @@ function GetCommentStringByLanguage (hbuf)
     } else if (Props.Language == Language_BAT) {
 
         RetString = Comment_Remarks
+    } else if (Props.Language == Language_ASM) {
+
+        RetString = Comment_SemiColon
     } else {
 
         RetString = nil
