@@ -2240,6 +2240,41 @@
 			<ScreenFont name="Consolas" psize="10" fpfamily="49" charset="0" />
 			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
 		</Type>
+		<Type
+			Name="x86 GNU Asm Source File"
+			FileFilter="*.s;*.s16"
+			Language="X86 GNU Assembler Language"
+			ParsePattern="^\(.*\):"
+			WordWrap="0"
+			ExpandTabs="1"
+			EnterKeyIsEOL="1"
+			StatusbarMode="0"
+			AddToProject="1"
+			EmulateScreenFontsForPrinting="1"
+			LineUpWhiteSpace="1"
+			VisibleTabs="0"
+			VisibleSpaces="0"
+			ShowLineNumbers="1"
+			ShowRightMargin="0"
+			ShowPageBreaks="0"
+			UseSymbolPane="1"
+			UseOverview="1"
+			AllowAutocomplete="1"
+			AllowSmartPaste="0"
+			AllowSnippets="1"
+			ShowRefHighlights="1"
+			TabWidth="2"
+			MarginWidth="120"
+			IndentWidth="1"
+			AutoInsertPairs="0"
+			ParsePatternSymbolType="Custom Tag"
+			AutoIndentMode="1"
+			IndentOpenBrace="1"
+			IndentCloseBrace="1"
+			>
+			<ScreenFont name="Consolas" psize="10" fpfamily="49" charset="0" />
+			<PrinterFont name="Consolas" psize="9" fpfamily="0" charset="0" />
+		</Type>
 	</FileTypes>
 	<Styles
 		StyleAppVer="4.00.0085"
@@ -9074,6 +9109,213 @@
 				<Item Keyword="wmic" Style="Keyword" />
 				<Item Keyword="xcopy" Style="Keyword" />
 				<Item Keyword="|" Style="Operator" />
+			</Keywords>
+		</Language>
+		<Language
+			Name="X86 GNU Assembler Language"
+			Comment="Published from https://github.com/wujingbo/Source-Insight-4.0-for-edk2"
+			CaseSensitive="0"
+			CPreprocessor="1"
+			SmartIndent="0"
+			ContainsSourceCode="1"
+			SyntaxFormatting="1"
+			UseRegexParsing="0"
+			SyntaxDecorations="0"
+			CommentStyles="0"
+			AllowSmartTab="0"
+			DetectNumbers="1"
+			CHexNum="1"
+			IntelHexNum="0"
+			MotorolaHexNum="1"
+			BasicHexNum="0"
+			IntelOctalNum="0"
+			QOctalNum="0"
+			NonAlphaNumIdentChars="_%"
+			>
+			<CustomParsing/>
+			<Ranges>
+				<Range
+					Type="Line"
+					AllowNesting="0"
+					ParseInside="0"
+					ReadOnly="0"
+					StyleName="Comment Single Line"
+					StyleDelimiter="1"
+					StartString="#"
+					EscapeString=""
+					ValidateColumns="0"
+					FirstColumn="0"
+					LastColumn="0"
+					/>
+				<Range
+					Type="Line"
+					AllowNesting="0"
+					ParseInside="0"
+					ReadOnly="0"
+					StyleName="Comment Single Line"
+					StyleDelimiter="1"
+					StartString="//"
+					EscapeString=""
+					ValidateColumns="0"
+					FirstColumn="0"
+					LastColumn="0"
+					/>
+				<Range
+					Type="Multiline"
+					AllowNesting="0"
+					ParseInside="0"
+					ReadOnly="0"
+					StyleName="Comment Multi Line"
+					StyleDelimiter="1"
+					StartString="/*"
+					EndString="*/"
+					EscapeString=""
+					ValidateColumns="0"
+					FirstColumn="0"
+					LastColumn="0"
+					/>
+			</Ranges>
+			<Keywords>
+				<Item Keyword="%mm0" Style="Register" />
+				<Item Keyword="%mm1" Style="Register" />
+				<Item Keyword="%mm2" Style="Register" />
+				<Item Keyword="%mm3" Style="Register" />
+				<Item Keyword="%mm4" Style="Register" />
+				<Item Keyword="%mm5" Style="Register" />
+				<Item Keyword="%mm6" Style="Register" />
+				<Item Keyword="%mm7" Style="Register" />
+				<Item Keyword="%r10" Style="Register" />
+				<Item Keyword="%r11" Style="Register" />
+				<Item Keyword="%r12" Style="Register" />
+				<Item Keyword="%r13" Style="Register" />
+				<Item Keyword="%r14" Style="Register" />
+				<Item Keyword="%r15" Style="Register" />
+				<Item Keyword="%r8" Style="Register" />
+				<Item Keyword="%r9" Style="Register" />
+				<Item Keyword="%rax" Style="Register" />
+				<Item Keyword="%rbp" Style="Register" />
+				<Item Keyword="%rbx" Style="Register" />
+				<Item Keyword="%rcx" Style="Register" />
+				<Item Keyword="%rdi" Style="Register" />
+				<Item Keyword="%rdx" Style="Register" />
+				<Item Keyword="%rsi" Style="Register" />
+				<Item Keyword="%rsp" Style="Register" />
+				<Item Keyword="addb" Style="Instruction" />
+				<Item Keyword="addl" Style="Instruction" />
+				<Item Keyword="addq" Style="Instruction" />
+				<Item Keyword="addw" Style="Instruction" />
+				<Item Keyword="andb" Style="Instruction" />
+				<Item Keyword="andl" Style="Instruction" />
+				<Item Keyword="andq" Style="Instruction" />
+				<Item Keyword="andw" Style="Instruction" />
+				<Item Keyword="call" Style="Instruction" />
+				<Item Keyword="cmova" Style="Instruction" />
+				<Item Keyword="cmovae" Style="Instruction" />
+				<Item Keyword="cmovb" Style="Instruction" />
+				<Item Keyword="cmovbe" Style="Instruction" />
+				<Item Keyword="cmove" Style="Instruction" />
+				<Item Keyword="cmovg" Style="Instruction" />
+				<Item Keyword="cmovge" Style="Instruction" />
+				<Item Keyword="cmovl" Style="Instruction" />
+				<Item Keyword="cmovle" Style="Instruction" />
+				<Item Keyword="cmovne" Style="Instruction" />
+				<Item Keyword="cmovns" Style="Instruction" />
+				<Item Keyword="cmovs" Style="Instruction" />
+				<Item Keyword="cmpb" Style="Instruction" />
+				<Item Keyword="cmpl" Style="Instruction" />
+				<Item Keyword="cmpq" Style="Instruction" />
+				<Item Keyword="cmpw" Style="Instruction" />
+				<Item Keyword="decb" Style="Instruction" />
+				<Item Keyword="decl" Style="Instruction" />
+				<Item Keyword="decq" Style="Instruction" />
+				<Item Keyword="decw" Style="Instruction" />
+				<Item Keyword="imulb" Style="Instruction" />
+				<Item Keyword="imull" Style="Instruction" />
+				<Item Keyword="imulq" Style="Instruction" />
+				<Item Keyword="imulw" Style="Instruction" />
+				<Item Keyword="incb" Style="Instruction" />
+				<Item Keyword="incl" Style="Instruction" />
+				<Item Keyword="incq" Style="Instruction" />
+				<Item Keyword="incw" Style="Instruction" />
+				<Item Keyword="ja" Style="Instruction" />
+				<Item Keyword="jb" Style="Instruction" />
+				<Item Keyword="je" Style="Instruction" />
+				<Item Keyword="jg" Style="Instruction" />
+				<Item Keyword="jge" Style="Instruction" />
+				<Item Keyword="jl" Style="Instruction" />
+				<Item Keyword="jle" Style="Instruction" />
+				<Item Keyword="jmp" Style="Instruction" />
+				<Item Keyword="jne" Style="Instruction" />
+				<Item Keyword="jns" Style="Instruction" />
+				<Item Keyword="js" Style="Instruction" />
+				<Item Keyword="jz" Style="Instruction" />
+				<Item Keyword="leab" Style="Instruction" />
+				<Item Keyword="leal" Style="Instruction" />
+				<Item Keyword="leaq" Style="Instruction" />
+				<Item Keyword="leaw" Style="Instruction" />
+				<Item Keyword="loop" Style="Instruction" />
+				<Item Keyword="mfence" Style="Instruction" />
+				<Item Keyword="movb" Style="Instruction" />
+				<Item Keyword="movl" Style="Instruction" />
+				<Item Keyword="movntq" Style="Instruction" />
+				<Item Keyword="movq" Style="Instruction" />
+				<Item Keyword="movsbb" Style="Instruction" />
+				<Item Keyword="movsbl" Style="Instruction" />
+				<Item Keyword="movsbq" Style="Instruction" />
+				<Item Keyword="movsbw" Style="Instruction" />
+				<Item Keyword="movw" Style="Instruction" />
+				<Item Keyword="movzbb" Style="Instruction" />
+				<Item Keyword="movzbl" Style="Instruction" />
+				<Item Keyword="movzbq" Style="Instruction" />
+				<Item Keyword="movzbw" Style="Instruction" />
+				<Item Keyword="negb" Style="Instruction" />
+				<Item Keyword="negl" Style="Instruction" />
+				<Item Keyword="negq" Style="Instruction" />
+				<Item Keyword="negw" Style="Instruction" />
+				<Item Keyword="nop" Style="Instruction" />
+				<Item Keyword="notb" Style="Instruction" />
+				<Item Keyword="notl" Style="Instruction" />
+				<Item Keyword="notq" Style="Instruction" />
+				<Item Keyword="notw" Style="Instruction" />
+				<Item Keyword="orb" Style="Instruction" />
+				<Item Keyword="orl" Style="Instruction" />
+				<Item Keyword="orq" Style="Instruction" />
+				<Item Keyword="orw" Style="Instruction" />
+				<Item Keyword="popb" Style="Instruction" />
+				<Item Keyword="popl" Style="Instruction" />
+				<Item Keyword="popq" Style="Instruction" />
+				<Item Keyword="popw" Style="Instruction" />
+				<Item Keyword="pushb" Style="Instruction" />
+				<Item Keyword="pushl" Style="Instruction" />
+				<Item Keyword="pushq" Style="Instruction" />
+				<Item Keyword="pushw" Style="Instruction" />
+				<Item Keyword="pxor" Style="Instruction" />
+				<Item Keyword="rep" Style="Instruction" />
+				<Item Keyword="ret" Style="Instruction" />
+				<Item Keyword="salb" Style="Instruction" />
+				<Item Keyword="sall" Style="Instruction" />
+				<Item Keyword="salq" Style="Instruction" />
+				<Item Keyword="salw" Style="Instruction" />
+				<Item Keyword="sarb" Style="Instruction" />
+				<Item Keyword="sarl" Style="Instruction" />
+				<Item Keyword="sarq" Style="Instruction" />
+				<Item Keyword="sarw" Style="Instruction" />
+				<Item Keyword="shrb" Style="Instruction" />
+				<Item Keyword="shrl" Style="Instruction" />
+				<Item Keyword="shrq" Style="Instruction" />
+				<Item Keyword="shrw" Style="Instruction" />
+				<Item Keyword="subb" Style="Instruction" />
+				<Item Keyword="subl" Style="Instruction" />
+				<Item Keyword="subq" Style="Instruction" />
+				<Item Keyword="subw" Style="Instruction" />
+				<Item Keyword="testb" Style="Instruction" />
+				<Item Keyword="testl" Style="Instruction" />
+				<Item Keyword="testq" Style="Instruction" />
+				<Item Keyword="testw" Style="Instruction" />
+				<Item Keyword="xorb" Style="Instruction" />
+				<Item Keyword="xorl" Style="Instruction" />
+				<Item Keyword="xorq" Style="Instruction" />
+				<Item Keyword="xorw" Style="Instruction" />
 			</Keywords>
 		</Language>
 	</Languages>
